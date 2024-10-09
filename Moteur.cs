@@ -29,7 +29,7 @@ namespace TPGestionGarage
         }
         public void Afficher()
         {
-            Console.WriteLine("Moteur: " + Nom + "\nPuissance : " + Puissance + "\nPrix : " + Prix + "€");
+            Console.WriteLine($"Moteur: {Nom} \nPuissance : {Puissance} \nPrix : {Prix} €");
         }
     }
 }

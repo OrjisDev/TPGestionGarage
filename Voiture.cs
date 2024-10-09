@@ -16,6 +16,7 @@ namespace TPGestionGarage
         {
             Console.WriteLine("Voiture: " + Nom + "\nMarque : " + Marque + "\nChevaux fiscaux : " + ChevauxFiscaux + "\nNombre portes : " + NbPortes + "\nNombres sièges : " + NbSieges + "\nTaille du coffre : " + TailleCoffre + " m3" + "\nPrix : " + PrixTotal() + " €");
             AfficherOptions();
+            Moteur.Afficher();
         }
 
         public override decimal CalculerTaxe()
