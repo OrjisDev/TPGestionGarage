@@ -15,6 +15,7 @@ namespace TPGestionGarage
         audi,
         ferrari,
     }
+
     public abstract class Vehicle
     {
         private static int increment = 0;
@@ -24,6 +25,7 @@ namespace TPGestionGarage
         protected Marque Marque { get; set; }
         protected List<Option> Options { get; set; }
         protected Moteur Moteur { get; set; }
+
         public Vehicle(int Id, string Nom, int PrixHT, Marque marque, List<Option> options, Moteur moteur)
         {
             increment++;
@@ -40,11 +42,18 @@ namespace TPGestionGarage
             foreach (Option option in Options)
             {
                 option.Afficher();
-            }   
+            }
         }
+
         public abstract void Afficher();
-        public void AjouterOption(Option option) { Options.Add(option); }
+
+        public void AjouterOption(Option option)
+        {
+            Options.Add(option);
+        }
+
         public abstract decimal CalculerTaxe();
+
         public decimal PrixTotal()
         {
             decimal optionsPrix = 0;
@@ -52,18 +61,8 @@ namespace TPGestionGarage
             {
                 optionsPrix += option.Prix;
             }
+
             return PrixHT + optionsPrix + CalculerTaxe();
         }
     }
-
-    public class Camion
-    {
-
-    }
-
-    public class Moto
-    {
-
-    }
-
 }
